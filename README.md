@@ -30,6 +30,23 @@ Or directly:
 python diskstat.py [path]
 ```
 
+## Build a standalone .exe
+
+On Windows:
+
+```cmd
+build.bat
+```
+
+This installs PyInstaller and produces `dist\DiskStat.exe` — a single
+self-contained executable that doesn't require Python to be installed
+on the target machine.
+
+Alternatively, every push to GitHub runs the `Build Windows EXE`
+workflow (`.github/workflows/build-exe.yml`), which builds on
+`windows-latest` and uploads `DiskStat.exe` as a downloadable artifact.
+Push a `v*` tag to also attach the exe to a GitHub Release.
+
 ## Notes
 
 - Symlinks to directories are not followed, to avoid loops.
